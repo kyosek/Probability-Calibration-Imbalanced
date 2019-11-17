@@ -8,8 +8,8 @@ len(df[df['Class']==1])/len(df) # 0.0017
 df['amt'] = preprocessing.normalize(np.array(df['Amount']).reshape(-1,1),norm='l2')
 
 # Split the dataset into train and test, and drop unnecessary features
-tr, te = train_test_split(df.drop(['Amount','Time'],1), test_size=.2,random_state=123)
+tr, te = train_test_split(df.drop(['Amount','Time'],1), test_size=.2,random_state=42)
 
 # Check the distributions of positive class in both train and test dataset
-len(tr[tr['Class']==1])/len(tr) # 0.0016546
-len(te[te['Class']==1])/len(te) # 0.002018
+len(tr[tr['Class']==1])/len(tr) # .001729
+len(te[te['Class']==1])/len(te) # .001720

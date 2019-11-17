@@ -7,12 +7,13 @@ import io, os, sys, types, gc, re
 from sklearn import preprocessing
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import average_precision_score,confusion_matrix,precision_score,recall_score,mean_squared_error, roc_auc_score, roc_curve, precision_recall_curve, cohen_kappa_score, f1_score, log_loss
+from sklearn.metrics import average_precision_score,confusion_matrix,precision_score,recall_score,mean_squared_error, precision_recall_curve, cohen_kappa_score, f1_score, log_loss
 from imblearn.under_sampling import RandomUnderSampler
 rus = RandomUnderSampler(random_state=42)
 from imblearn.ensemble import BalancedBaggingClassifier
-import tqdm
-from src.functionalscripts.Bayes_Mimimum_Risk import *
+from sklearn.decomposition import PCA
+pca = PCA(n_components=1,random_state=42)
+from src.functionalscripts.BMR import *
 
 def make_prediction(model,X,threshold):
     y_pred = model.predict_proba(X)
@@ -23,5 +24,6 @@ def evaluation(true, pred):
     print('F1-score: ' + str(round(f1_score(true,pred),4)), '\n'
     'Precision: ' + str(round(precision_score(true,pred),4)), '\n'
     'Recall: ' + str(round(recall_score(true,pred),4)), '\n'
+    'Log loss: ' + str(round(log_loss(true,pred),4)), '\n'
     'Cohen-Kappa: ' + str(round(cohen_kappa_score(true,pred),4)), '\n' 
     'Confusion matrix:' + '\n' + str(confusion_matrix(true,pred)))

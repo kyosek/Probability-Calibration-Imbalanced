@@ -1,4 +1,5 @@
 # input data
+# this dataset is downloaded from https://www.kaggle.com/mlg-ulb/creditcardfraud
 df = pd.read_csv('src/resources/data/creditcard.csv')
 
 # The percentage of positive class in this dataset

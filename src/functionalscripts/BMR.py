@@ -1,4 +1,4 @@
-# BMR (Bayes Minimum Risk) implementation
+# BMR (Bayes Minimum Risk) calibration implementation
 # Pozzolo et al., 2015, Calibrating Probability with Undersampling
 
 class BMR:

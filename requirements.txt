@@ -8,7 +8,7 @@ imbalanced_learn == 0.5.0
 matplotlib == 3.1.1
 
 # src/functionalscripts/config.py: 2
-numpy == 1.17.2
+numpy == 1.22.0
 
 # src/functionalscripts/config.py: 3
 pandas == 0.23.0

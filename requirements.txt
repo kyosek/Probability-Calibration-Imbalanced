@@ -14,7 +14,7 @@ numpy == 1.22.0
 pandas == 0.23.0
 
 # src/functionalscripts/config.py: 10
-scikit_learn == 0.21.3
+scikit_learn == 1.5.0
 
 # src/functionalscripts/config.py: 5
 seaborn == 0.9.0
